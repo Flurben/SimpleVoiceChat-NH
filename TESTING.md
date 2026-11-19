@@ -6,14 +6,17 @@ Tested on Windows 11 with GT New Horizons 2.8.4 (230 mods, lwjgl3ify, Angelica, 
 | --- | --- | --- |
 | Audio processing, Opus for all three codec modes, AES-GCM, voice packets, jitter buffer (reordering, loss with FEC, end of sentence, rejoin), 3D panning and distance, config files | Unit tests, `./gradlew build` | 10 of 10 pass |
 | Whole mod in singleplayer with a simulated second player over real UDP | In-game test, `src/ingametest` | 23 of 23 pass |
-| Two real game clients, one hosting a LAN world, two accounts | In-game LAN test | LAN_RESULT |
+| Two real game clients, one hosting a LAN world, two accounts | In-game LAN test | **Could not run**, see below |
 
 The single player in-game test covers: the config screen in the mod list, listing audio devices, the voice server starting with the world, the UDP connection, the first time setup with its microphone test, every screen (menu, settings in both activation modes, device selection, volumes, groups, create group, password, group members), hearing another player with direction and distance, sending with voice activation, silence not being sent, mute, disable (nothing in or out, and the server shows the player as disabled), push to talk, whisper and its shorter range, the voice distance, other dimensions, normal, open and isolated groups, group members hearing each other 1000 blocks apart and across dimensions, group passwords, all commands including group names with spaces, the M, N, H and V keys, HUD, group HUD and name tag icons, recording two aligned WAV tracks, the tunnel through the Minecraft connection in both directions and back to UDP, and leaving and rejoining a world.
 
 The microphone is replaced by a generated voice and the speaker output is silenced in these tests. The real microphone and speaker devices are listed and the speaker is opened, but no real audio is captured or played.
 
+**Two real clients:** a second GT New Horizons client on the same PC could not join the LAN world of the first. Every attempt failed during login with `ClassCastException: NetHandlerLoginClient cannot be cast to INetHandlerPlayClient`. It failed the same way with the voice chat server switched off, and when joining through the launcher's `--server` option, so the voice chat server is not the cause. Two players on separate machines therefore have not talked to each other yet. The simulated second player above goes through the same UDP socket, encryption, routing and client code.
+
 **Not tested:**
 
+- Two real players on separate computers.
 - A dedicated server (starting one needs the EULA accepted). The server code is the same that runs inside singleplayer and LAN worlds.
 - Speaking into a real microphone and listening with real ears.
 - Linux and macOS, and Java 8.
