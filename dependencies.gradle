@@ -1,0 +1,10 @@
+// Add your dependencies here
+
+dependencies {
+    // Pure Java Opus codec (BSD licensed), shaded and relocated into the mod jar
+    shadowImplementation("org.concentus:Concentus:1.0.1")
+
+    testImplementation(platform("org.junit:junit-bom:5.10.2"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}

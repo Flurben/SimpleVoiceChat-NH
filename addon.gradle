@@ -1,0 +1,14 @@
+// Applied by the GTNH convention plugin
+tasks.named("test") {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "failed", "skipped"
+        exceptionFormat "full"
+    }
+}
+
+// The in-game test driver only gets compiled on request, it can never be part of a normal build
+if (providers.gradleProperty("ingameTest").isPresent()) {
+    sourceSets.main.java.srcDir("src/ingametest/java")
+}

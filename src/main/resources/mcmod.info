@@ -1,0 +1,16 @@
+[
+{
+  "modid": "${modId}",
+  "name": "${modName}",
+  "description": "Proximity voice chat for Minecraft 1.7.10 and GT New Horizons. An unofficial reimplementation of Simple Voice Chat.",
+  "version": "${modVersion}",
+  "mcversion": "${minecraftVersion}",
+  "url": "https://github.com/Flurben/SimpleVoiceChat-NH",
+  "updateUrl": "",
+  "authorList": ["Flurben"],
+  "credits": "Inspired by Simple Voice Chat by Max Henkel. Opus decoding/encoding by Concentus (BSD).",
+  "logoFile": "assets/voicechat/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
