@@ -4,6 +4,12 @@ Proximity voice chat for **Minecraft 1.7.10** and **[GT New Horizons](https://ww
 
 > This is an unofficial, independent reimplementation. It is not affiliated with or endorsed by the authors of Simple Voice Chat. Upstream code and art are "All Rights Reserved", so none of it is included: the code and the icons in this repository were written and drawn from scratch. Only the behavior and the layout of the screens follow the original. It does not talk to Simple Voice Chat on newer Minecraft versions, and addons for the original do not work with it.
 
+| | |
+| --- | --- |
+| ![Voice chat menu](docs/images/menu.png) | ![Settings](docs/images/settings.png) |
+| ![Talking icon next to a name tag, group HUD and own microphone icon](docs/images/hud-talking.png) | ![Group members](docs/images/group.png) |
+| ![Groups](docs/images/groups.png) | ![First time setup](docs/images/onboarding-4-activation.png) |
+
 ## Features
 
 - **Proximity voice chat** with 3D audio: voices come from where the player stands and fade out with distance (48 blocks by default)
